@@ -49,6 +49,7 @@ CREATE TABLE `geno` (
   PRIMARY KEY (`chr`, `pos`, `ref`, `alt`),
   KEY (`chr`, `pos`, `consequences`),
   KEY (`most_severe_consequence`),
+  KEY (`rsid`),
   KEY (`n_genotypes`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
