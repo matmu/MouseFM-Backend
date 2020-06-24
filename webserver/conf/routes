@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+GET    /rest/finemap/:region	controllers.RestController.finemap(region:String, consequence:java.util.List[String], impact:java.util.List[String], strain1:java.util.List[String], strain2:java.util.List[String], thr1:Integer ?= null, thr2:Integer ?= null)
