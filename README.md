@@ -1,5 +1,5 @@
 # MouseFM-Backend
-This repository contains the backend of the MouseFM tool including the scripts of the etl process and the webserver. The MouseFM client is available as an R package ... at or at Bioconductor.
+This repository contains the backend of the MouseFM tool including the scripts of the etl process and the webserver. The MouseFM client is available as an R package on Github (https://github.com/matmu/MouseFM) or on Bioconductor (https://bioconductor.org/packages/devel/bioc/html/MouseFM.html).
 
 
 ## Extraction, Translation, Loading
