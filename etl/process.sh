@@ -29,3 +29,7 @@ sed 1d snps.rm.ref.txt | cut -f7 | sed 's/,/\n/g' | sort | uniq -c
 # Update rsids
 zcat mus_musculus.vcf.gz | grep -v "#" | awk '{print $1"\t"$2"\t"$4"\t"$5"\t"$3}' >mus_musculus.rsids.txt
 ./update_rsids.pl snps.rm.ref.txt mus_musculus.rsids.txt snps.rm.ref.rsids.txt
+
+
+# Loading
+./loading.pl
