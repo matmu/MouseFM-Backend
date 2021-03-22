@@ -9,6 +9,8 @@ The scripts for building the database are located under `etl/`. Run `process.sh`
 ## Webserver
 The webserver of MouseFM is located under `webserver/`. Configurations such as MySQL user can be adapted in `webserver/conf/application.conf`. For debugging purposes the webserver can be started with `webserver/process.sh`.
 
+## Run using docker-compose
+Alternatively the webserver of MouseFM can be started using Docker. To do so you need to place the database `mousefm.100.sql.gz` in the root directory of this repository and start using `docker-compose up -d`. The first start will take some time because as the MySQL database will be imported. After that the webserver should be available at port 9000.
 
 ## Database SQL dump
 A dump of the database is available at https://drive.google.com/file/d/16QVwdWw79lGlXudWTNFpULYDfSdNQQYQ/view?usp=sharing (932MB).

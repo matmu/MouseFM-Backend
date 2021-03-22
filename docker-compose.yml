@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  webserver:
+    restart: unless-stopped
+    build: ./webserver
+    depends_on:
+     - database
+    networks:
+     - mousefm_net
+    ports:
+      - "9000:9000"
+    entrypoint: ["java"]
+    command: [
+      "-Ddb.mousefm.url=jdbc:mysql://database/mousefm",
+      "-jar",
+      "/app/mousefmserv.jar"
+    ]
+  database:
+    restart: unless-stopped
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-8erbahn}
+      MYSQL_DATABASE: mousefm
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: ${MYSQL_USER_PASSWORD:-8erbahn}
+    volumes:
+     - ./mousefm.100.sql.gz:/docker-entrypoint-initdb.d/mousefm.100.sql.gz:ro
+     - mousefm_data:/var/lib/mysql
+    networks:
+     - mousefm_net
+
+networks:
+  mousefm_net: 
+  
+volumes:
+  mousefm_data:
