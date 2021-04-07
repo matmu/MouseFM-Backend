@@ -12,3 +12,6 @@ addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.2.2")
 // Ebean
 addSbtPlugin("com.typesafe.sbt" % "sbt-play-ebean" % "5.0.1")
 //addSbtPlugin("com.typesafe.sbt" % "sbt-play-ebean" % "4.1.0")
+
+// Assembly
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.15.0")
